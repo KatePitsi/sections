@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz@0,9..40;1,9..40&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 html {
     scroll-behavior: smooth;
 }
@@ -6,6 +6,12 @@ body {
     @media all and (max-width: 1279px) {
         padding: 0 20px;
     }
+}
+
+section {
+    width: 100%;
+    max-width: 1500px;
+    margin: 2rem auto;
 }
 
 button {
@@ -38,9 +44,6 @@ button {
 }
 
 .section-one {
-    width: 100%;
-    max-width: 1500px;
-    margin: 2rem auto;
     .inner-section-one {
         display: flex;
         flex-direction: row;
@@ -159,10 +162,140 @@ button {
 }
 
 .section-two {
-    width: 100%;
-    max-width: 1500px;
-    margin: 2rem auto;
     .inner-section-two {
+        .top {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            border-radius: inherit;
+            padding: 0px;
+            .eyebrow {
+                font-family: "Roboto Mono:Regular", sans-serif;
+                word-break: break-word;
+                font-weight: 600;;
+                color: #6f6f6f;
+                font-size: 12px;
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+                color: #919c7c;
+            }
+            .main-title {
+                text-align: center;
+            }
+            .subtitle {
+                font-family: "DM Sans", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 15px;
+                color: #6f6f6f;
+                text-align: center;
+            }
+        }
+        .table-section {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            border-radius: inherit;
+            padding: 0 0 40px 0;
+            overflow-x: auto;
+            width: 100%;
+            max-width: 1500px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            margin: 120px auto;
+            .one, .two, .three {
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+                scroll-snap-align: start;
+            }
+            .one {
+                border: 1px solid 1px solid #e8e7e7;
+                border-radius: 30px;
+                box-shadow: 1px 0 4px -2px #888;
+                .head {
+                    color: black;
+                    font-family: "DM Sans", sans-serif;
+                    font-weight: 500;
+                    font-style: normal;
+                    font-size: 26px;
+                }
+            }
+            .two {
+                .head {
+                    
+                    font-size: 23px;
+                }
+                .row {
+                    border-right: 1px solid #e9e9e9;
+                }
+            }
+            .three {
+                .head {
+                    font-size: 22px;
+                }
+                .row {
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                }
+            }
+            .head {
+                text-align: center;
+                font-family: "DM Sans", sans-serif;
+                font-family: "Rethink Sans", sans-serif;
+                font-weight: 500;
+                font-style: normal;
+                color: #6f6f6f;
+                padding: 40px 30px;
+                border-bottom: 1px solid #929292;
+                height: 30px;
+                // width: 100%;
+            }
+            .main {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                position: relative;
+                .row {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 8px;
+                    position: relative;
+                    padding: 32px 30px;
+                    border-bottom: 1px solid #e9e9e9;
+                }
+                svg {
+                    width: 10px;
+                    height: 10px;
+                    display: inline;
+                }
+                span {
+                    font-family: "Roboto Mono", monospace;
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: black;
+                    line-height: 1.2;
+                    letter-spacing: -0.12px;
+                    white-space: nowrap;
+                    word-break: break-word;
+                    @media all and (max-width: 1279px) {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-three {
+    .inner-section-three {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -183,22 +316,28 @@ button {
         .numbers {
             display: flex;
             flex-direction: row;
-            justify-content: center;
-            align-items: flex-start;
             gap: 20px;
             position: relative;
             border-radius: inherit;
             padding: 0 0 40px 0;
             overflow-x: auto;
             width: 100%;
+            max-width: 1500px;
             margin: 0 auto;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
+            @media all and (min-width: 1279px) {
+                justify-content: center;
+                align-items: flex-start;
+            }
             .one, .two, .three {
                 border-top: 1px solid #e9e9e9;
                 flex: 0 0 auto;
                 min-width: 280px;
                 scroll-snap-align: start;
+                @media all and (min-width: 1279px) {
+                    padding: 60px 30px 20px 0px;
+                }
             }
             .big-number {
                 color: #929292;
@@ -219,6 +358,9 @@ button {
                 font-weight: 400;
                 font-style: normal;
                 color: #6f6f6f;
+                font-size: 15px;
+                line-height: 1.2;
+                width: 100%;
             }
         }
         .map {
