@@ -4,9 +4,8 @@
   "description": "sections",
   "scripts": {
     "sass": "sass --watch scss/style.scss:css/style.min.css --style=compressed",
-    "tailwind": "tailwindcss -i ./tailwind/tailwind.css -o ./css/tailwind.css --minify --watch",
     "server": "lite-server",
-    "start": "concurrently \"npm run sass\" \"npm run tailwind\" \"npm run server\""
+    "start": "concurrently \"npm run sass\" \"npm run server\""
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
