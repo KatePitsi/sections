@@ -1,9 +1,10 @@
+// Start of global styles
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz@0,9..40;1,9..40&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 html {
     scroll-behavior: smooth;
 }
 body {
-    @media all and (max-width: 1279px) {
+    @media all and (min-width: 376px) {
         padding: 0 20px;
     }
 }
@@ -12,17 +13,31 @@ section {
     width: 100%;
     max-width: 1500px;
     margin: 2rem auto;
+    @media all and (min-width: 1440px) {
+        max-width: 80%;
+    }
+}
+
+button, .subtitle, .numeric-list, .head, .big-number  {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;   
+    font-style: normal;
+    color: black;
+}
+
+.main-title, .title {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 button {
-    font-family: "DM Sans", sans-serif;
     font-weight: 700;
-    color: black;
     background: #e2ecca;
     border: 0;
     border-radius: 50px;
     font-size: 14px;
-    padding: 14px 22px;
+    padding: 14px 22px !important;
     width: 100%;
     max-width: 150px;
     &:hover {
@@ -33,33 +48,46 @@ button {
 }
 
 .main-title {
-    font-family: "Crimson Text", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: calc(50px + (60 - 50) * (100vw - 320px) / (1920 - 320)) !important;
+    font-size: calc(49px + (60 - 49) * (100vw - 374px) / (1280 - 374)) !important;
     text-align: left;
     line-height: 1.2;
     color: black;
     margin: 0;
+    letter-spacing: -0.48px;
 }
+// End of global styles
 
 .section-one {
+    padding: 60px 0 80px;
     .inner-section-one {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
         gap: 20px;
         position: relative;
-        border-radius: inherit;
         padding: 0 0 120px;
-        @media all and (max-width: 1279px) {
-            flex-direction: column;
+        width: 100%;
+        max-width: 343px;
+        margin: 0 auto;
+        @media all and (min-width: 500px) {
+            max-width: 100%;
+        }
+        @media all and (min-width: 801px) {
+            flex-direction: row;
+        }
+        @media all and (min-width: 1440px) {
+            gap: 100px;
         }
         .left, .right {
             width: 100%;
-            max-width: 740px;
+            max-width: 100%;
             margin: auto;
+            @media all and (min-width: 801px) {
+                max-width: 50%;
+            }            
         }
         .left {
             display: flex;
@@ -68,7 +96,15 @@ button {
             align-items: flex-start;
             gap: 40px;
             position: relative;
-            padding: 60px 0 80px;
+            height: 100%;
+            padding-bottom: 40px;
+            @media all and (min-width: 500px) {
+                height: 644px;
+            }
+            @media all and (min-width: 801px) {
+                height: 744px;
+                padding-bottom: 0;
+            }
             .line {
                 position: absolute;
                 border-top: 1px solid #e9e9e9;
@@ -78,23 +114,22 @@ button {
                 padding-top: 60px;
             }
             .subtitle {
-                font-weight: 400;
-                font-style: normal;
                 font-size: 15px;
                 color: #6f6f6f;
                 width: 100%;
                 line-height: 1.2;
-                max-width: 660px;
+                max-width: 580px;
+                @media all and (min-width: 1280px) {
+                    max-width: 510px;
+                }
             }
             .numeric-list {
-                font-family: "DM Sans", sans-serif;
-                font-weight: 400;
-                font-style: normal;
-                color: black;
+                width: 100%;
                 .numeric-list-item {
-                    padding: 20px 80px 20px 0;
-                    @media all and (max-width: 1279px) {
-                        padding: 20px 0;
+                    font-size: 15px;
+                    padding: 20px 0px 20px 0;
+                    @media all and (min-width: 800px) {
+                        padding: 20px 95px 20px 0;
                     }
                     margin: auto;
                     display: flex;
@@ -103,13 +138,7 @@ button {
                     align-items: flex-start;
                     gap: 30px;
                     position: relative;
-                    &:nth-child(2) {
-                        border-top: 1px solid #e9e9e9;
-                    }
-                    &:nth-child(3) {
-                        border-top: 1px solid #e9e9e9;
-                        border-bottom: 1px solid #e9e9e9;
-                    }
+                    border-top: 1px solid #e9e9e9;
                     .list-number {
                         font-weight: 700;
                         color: #6f6f6f;
@@ -118,6 +147,7 @@ button {
             }
         }
         .right {
+            height: 744px;
             .swiper {
                 position: relative;
                 display: flex;
@@ -128,6 +158,10 @@ button {
                 overflow: hidden;
                 border-radius: 30px;
                 .image {
+                    height: 744px;
+                    @media all and (min-width: 800px) {
+                        height: 711px;
+                    }  
                     img {
                         width: 100%;
                         height: 100%;
@@ -171,6 +205,15 @@ button {
             position: relative;
             border-radius: inherit;
             padding: 0px;
+            width: 100%;
+            max-width: 343px;
+            margin: 0 auto;
+            @media all and (min-width: 800px) {
+                max-width: 560px;
+            }
+            @media all and (min-width: 1280px) {
+                max-width: 720px;
+            }
             .eyebrow {
                 font-family: "Roboto Mono:Regular", sans-serif;
                 word-break: break-word;
@@ -186,12 +229,12 @@ button {
                 text-align: center;
             }
             .subtitle {
-                font-family: "DM Sans", sans-serif;
-                font-weight: 400;
-                font-style: normal;
                 font-size: 15px;
                 color: #6f6f6f;
                 text-align: center;
+                max-width: 720px;
+                width: 100%;
+                margin: 0 auto;
             }
         }
         .table-section {
@@ -217,10 +260,7 @@ button {
                 border-radius: 30px;
                 box-shadow: 1px 0 4px -2px #888;
                 .head {
-                    color: black;
-                    font-family: "DM Sans", sans-serif;
                     font-weight: 500;
-                    font-style: normal;
                     font-size: 26px;
                 }
                 .row {
@@ -231,7 +271,6 @@ button {
             }
             .two {
                 .head {
-                    
                     font-size: 23px;
                 }
                 .row {
@@ -243,17 +282,17 @@ button {
                     font-size: 22px;
                 }
                 .row {
-                    &:last-child {
-                        border-bottom: 0;
+                    @media all and (min-width: 801px) {
+                        &:last-child {
+                            border-bottom: 0;
+                        }
                     }
                 }
             }
             .head {
                 text-align: center;
-                font-family: "DM Sans", sans-serif;
                 font-family: "Rethink Sans", sans-serif;
                 font-weight: 500;
-                font-style: normal;
                 color: #6f6f6f;
                 padding: 40px 30px;
                 border-bottom: 1px solid #929292;
@@ -289,7 +328,7 @@ button {
                     letter-spacing: -0.12px;
                     white-space: nowrap;
                     word-break: break-word;
-                    @media all and (max-width: 1279px) {
+                    @media all and (max-width: 1280px) {
                         font-size: 10px;
                     }
                 }
@@ -306,15 +345,33 @@ button {
         align-items: flex-start;
         gap: 80px;
         position: relative;
-        border-radius: inherit;
+        margin: 0 auto;
         padding: 80px 0 120px;
+        width: 100%;
+        max-width: 343px;
+        @media all and (min-width: 375px) {
+            max-width: 720px;
+        }
+        @media all and (min-width: 801px) {
+            max-width: 1200px;
+        }
+        @media all and (min-width: 1281px) {
+            max-width: 100%;
+        }
         .top {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: space-between;
             width: 100%;
-            @media all and (max-width: 1279px) {
-                flex-direction: column;
+            @media all and (min-width: 800px) {
+                flex-direction: row;
+                align-items: center;
+            }
+            button {
+                height: 46px;
+                @media all and (min-width: 375px) {
+                    margin: 2rem 0;
+                }
             }
         }
         .numbers {
@@ -322,7 +379,6 @@ button {
             flex-direction: row;
             gap: 20px;
             position: relative;
-            border-radius: inherit;
             padding: 0 0 40px 0;
             overflow-x: auto;
             width: 100%;
@@ -330,49 +386,54 @@ button {
             margin: 0 auto;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
+            @media all and (min-width: 376px) {
+                gap: 37px;
+            }
             @media all and (min-width: 1279px) {
                 justify-content: center;
                 align-items: flex-start;
+                gap: 20px;
             }
             .one, .two, .three {
                 border-top: 1px solid #e9e9e9;
                 flex: 0 0 auto;
-                min-width: 280px;
                 scroll-snap-align: start;
-                @media all and (min-width: 1279px) {
-                    padding: 60px 30px 20px 0px;
+                @media all and (max-width: 375px) {
+                    min-width: 240px;
+                }
+                @media all and (min-width: 801px) {
+                    padding: 60px 0 20px 0px;
+                    max-width: 380px;
                 }
             }
             .big-number {
                 color: #929292;
                 font-size: calc(64px + (80 - 64) * (100vw - 320px) / (1920 - 320)) !important;
-                font-family: "DM Sans", sans-serif;
-                font-weight: 400;
-                font-style: normal;
             }
             .title {
-                font-family: "Crimson Text", serif;
-                font-weight: 400;
-                font-style: normal;
                 color: black;
                 font-size: 18px;
             }
             .subtitle {
-                font-family: "DM Sans", sans-serif;
-                font-weight: 400;
-                font-style: normal;
                 color: #6f6f6f;
                 font-size: 15px;
                 line-height: 1.2;
                 width: 100%;
+                max-width: 215px;
+                @media all and (min-width: 801px) {
+                    max-width: 100%;
+                }
             }
         }
         .map {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
             .image {
                 overflow: hidden;
                 border-radius: 30px;
                 height: 830px;
-                @media all and (max-width: 1279px) {
+                @media all and (max-width: 1280px) {
                     height: 600px;
                 }
                 img {
