@@ -57,6 +57,20 @@ button {
     margin: 0;
     letter-spacing: -0.48px;
 }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+    color: black;
+    background-color: white;
+}
 // End of global styles
 
 .section-one {
@@ -223,7 +237,8 @@ button {
                 width: 100%;
                 margin: 0 auto;
                 text-align: center;
-                color: #919c7c;
+                color: #4C5440;
+                background-color: white;
             }
             .main-title {
                 text-align: center;
