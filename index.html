@@ -31,10 +31,10 @@
 
                         <div class="line"></div>
 
-                        <h2 class="main-title">See the Big Picture</h2>
-                        <p class="subtitle">Area turns your data into clear, vibrant visuals that show you exactly what's happening in each region.</p>
+                        <h2 class="main-title fade-in">See the Big Picture</h2>
+                        <p class="subtitle fade-in">Area turns your data into clear, vibrant visuals that show you exactly what's happening in each region.</p>
 
-                        <div class="numeric-list">
+                        <div class="numeric-list fade-in">
 
                             <p class="numeric-list-item"><span class="list-number">01</span> Spot Trends in Seconds: No more digging through numbers.</p>
                             <p class="numeric-list-item"><span class="list-number">02</span> Get Everyone on the Same Page: Share easy-to-understand reports with your team.</p>
@@ -43,14 +43,14 @@
 
                         </div>
 
-                        <button type="button" onclick="window.location.href='#section-two'">Discover More</button>
+                        <button type="button" onclick="window.location.href='#section-two'" class="fade-in">Discover More</button>
 
                     </div>
 
                     <div class="right">
 
                         <!-- Swiper -->
-                        <div class="swiper mySwiper" role="region" aria-label="Image carousel showing featured illustrations" aria-live="polite">
+                        <div class="swiper mySwiper fade-left" role="region" aria-label="Image carousel showing featured illustrations" aria-live="polite">
 
                             <div class="swiper-wrapper">
 
@@ -113,14 +113,14 @@
 
                     <div class="top">
 
-                        <p class="eyebrow">Specs</p>
-                        <h2 class="main-title">Why Choose Area?</h2>
-                        <p class="subtitle">You need a solution that keeps up. That’s why we developed Area. A developer-friendly approach to streamline your business. </p>
-                        <button type="button" onclick="window.location.href='#section-three'">Discover More</button>
+                        <p class="eyebrow fade-in">Specs</p>
+                        <h2 class="main-title fade-in">Why Choose Area?</h2>
+                        <p class="subtitle fade-in">You need a solution that keeps up. That’s why we developed Area. A developer-friendly approach to streamline your business. </p>
+                        <button type="button" onclick="window.location.href='#section-three'" class="fade-in">Discover More</button>
 
                     </div>
 
-                    <div class="table-section">
+                    <div class="table-section fade-left">
 
                         <div class="one">
                             <div class="head">Area</div>
@@ -248,34 +248,34 @@
 
                     <div class="top">
 
-                        <h2 class="main-title">Map Your Success</h2>
-                        <button type="button" onclick="window.location.href='#section-three'">Discover More</button>
+                        <h2 class="main-title fade-left">Map Your Success</h2>
+                        <button type="button" onclick="window.location.href='#section-three'" class="fade-left">Discover More</button>
 
                     </div>
 
                     <div class="numbers">
 
                         <div class="one">
-                            <h3 class="big-number">01</h3>
-                            <p class="title">Get Started</p>
-                            <p class="subtitle">With our intuitive setup, you’re up and running in minutes.</p>
+                            <h3 class="big-number fade-in">01</h3>
+                            <p class="title fade-in">Get Started</p>
+                            <p class="subtitle fade-in">With our intuitive setup, you’re up and running in minutes.</p>
                         </div>
 
                         <div class="two">
-                            <h3 class="big-number">02</h3>
-                            <p class="title">Customize and Configure</p>
-                            <p class="subtitle">Adapt Area to your specific requirements and preferences.</p>
+                            <h3 class="big-number fade-in">02</h3>
+                            <p class="title fade-in">Customize and Configure</p>
+                            <p class="subtitle fade-in">Adapt Area to your specific requirements and preferences.</p>
                         </div>
 
                         <div class="three">
-                            <h3 class="big-number">03</h3>
-                            <p class="title">Grow Your Business</p>
-                            <p class="subtitle">Make informed decisions to exceed your goals.</p>
+                            <h3 class="big-number fade-in">03</h3>
+                            <p class="title fade-in">Grow Your Business</p>
+                            <p class="subtitle fade-in">Make informed decisions to exceed your goals.</p>
                         </div>
 
                     </div>
 
-                    <div class="map">
+                    <div class="map fade-left">
 
                         <div class="image">
                             <picture>
@@ -302,6 +302,19 @@
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
+            });
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Αν θες να γίνει μόνο μία φορά
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+            document.querySelectorAll('.fade-in, .fade-left').forEach(el => {
+                observer.observe(el);
             });
         </script>
 
